@@ -220,6 +220,10 @@ public class StateManager {
         searchHistory.add(search);
     }
 
+    public void deleteSearchHistory(String search) {
+        searchHistory.remove(search);
+    }
+
     public ObservableList<String> getWholeSearchHistory() {
         return searchHistory;
     }

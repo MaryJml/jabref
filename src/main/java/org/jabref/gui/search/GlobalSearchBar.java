@@ -143,14 +143,16 @@ public class GlobalSearchBar extends HBox {
         searchField.setContextMenu(SearchFieldRightClickMenu.create(
                 keyBindingRepository,
                 stateManager,
-                searchField));
+                searchField,
+                dialogService));
 
         ObservableList<String> search = stateManager.getWholeSearchHistory();
         search.addListener((ListChangeListener.Change<? extends String> change) -> {
             searchField.setContextMenu(SearchFieldRightClickMenu.create(
                     keyBindingRepository,
                     stateManager,
-                    searchField));
+                    searchField,
+                    dialogService));
         });
 
         ClipBoardManager.addX11Support(searchField);
