@@ -64,4 +64,8 @@ public class SearchHistoryDialog extends BaseDialog<Void> {
                 .withOnMouseClickedEvent(item -> evt -> viewModel.delete(item))
                 .install(delete);
     }
+
+    public void clear() {
+        viewModel.clear();
+    }
 }
